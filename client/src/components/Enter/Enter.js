@@ -8,9 +8,9 @@ export default class Enter extends Component {
     render() {
         return (
             <div className="enterpage">
-                <Login setUser={this.setUser}></Login>
-                <SignUp setUser={this.setUser}></SignUp>
-                <Guest setUser={this.setUser}></Guest>
+                <Login match={this.props.match} setUser={this.props.setUser}></Login>
+                <SignUp match={this.props.match} setUser={this.props.setUser}></SignUp>
+                <Guest match={this.props.match} setUser={this.props.setUser}></Guest>
             </div>
         )
     }

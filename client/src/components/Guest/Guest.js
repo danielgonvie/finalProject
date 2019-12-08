@@ -15,14 +15,14 @@ export default class Guest extends Component {
     const { name, value } = e.target;
     this.setState({...this.state, [name]:value})
   }
-  handleLogin = (e) => {
+  handleGuest = (e) => {
     const { setUser, history } = this.props;
     e.preventDefault()
     this.authService.login(this.state)
     .then(
       (user) => {
         setUser(user)
-        history.push("/")
+     /*    history.push("/") */
       },
       (error) => {
         console.error(error)
@@ -37,13 +37,13 @@ export default class Guest extends Component {
       <div className="section-guest">
         <h1>Enter as guest</h1>
         <div className="container-guest">
-        <form onSubmit={this.handleLogin}>
+        <form onSubmit={this.handleGuest}>
         <div className="username-guest">
           <label htmlFor="username">Name: </label>
           <input type="text" name="username" value={username} onChange={this.handleChange}/>
           </div>
           <div className="button-guest">
-          <input type="submit" value="Login"/>
+          <input type="submit" value="Guest"/>
           </div>
         </form>
         </div>

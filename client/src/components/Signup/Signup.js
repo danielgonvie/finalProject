@@ -26,7 +26,7 @@ export default class SignUp extends Component {
     .then(
       (user) => {
         setUser(user);
-        history.push("/")
+/*         history.push("/") */
       },
       (error) => {
         console.error(error)

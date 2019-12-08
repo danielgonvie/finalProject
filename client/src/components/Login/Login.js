@@ -23,7 +23,7 @@ export default class Login extends Component {
     .then(
       (user) => {
         setUser(user)
-        history.push("/")
+       /*  history.push("/") */
       },
       (error) => {
         console.error(error)
@@ -32,13 +32,18 @@ export default class Login extends Component {
   }
 
   render() {
+
     const { username, password } = this.state;
+
     return (
       <div className="login">
       <div className="section-login">
+      <div className="title-login">
         <h1>Login</h1>
+        </div>
         <div className="container-login">
         <form onSubmit={this.handleLogin}>
+        <div className="fields-login">
         <div className="username-login">
           <label htmlFor="username">Username: </label>
           <input type="text" name="username" value={username} onChange={this.handleChange}/>
@@ -47,7 +52,7 @@ export default class Login extends Component {
           <label htmlFor="password" >Password: </label>
           <input type="password" name="password" value={password} onChange={this.handleChange}/>
           </div>
-          
+          </div>
           <div className="button-login">
           <input type="submit" value="Login"/>
           </div>

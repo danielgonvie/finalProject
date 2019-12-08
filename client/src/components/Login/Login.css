@@ -6,3 +6,39 @@
     width: 33vw;
     height: 90vh;
 }
+
+.section-login{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+
+.title-login{
+    padding: 20px;
+}
+
+.fields-login{
+    display:flex;
+    flex-direction: column;
+}
+
+.username-login, .password-login{
+    display:flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+label{
+    padding: 5px 0px;
+}
+
+.button-login{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px
+}
