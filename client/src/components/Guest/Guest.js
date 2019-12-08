@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import AuthService from '../../services/AuthService';
-import "./Login.css";
+import "./Guest.css";
 
-export default class Login extends Component {
+export default class Guest extends Component {
   constructor(props) {
     super(props);
     this.authService = new AuthService();
@@ -10,7 +10,6 @@ export default class Login extends Component {
 
   state = {
     username: '',
-    password: ''
   }
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,23 +31,18 @@ export default class Login extends Component {
   }
 
   render() {
-    const { username, password } = this.state;
+    const { username} = this.state;
     return (
-      <div className="login">
-      <div className="section-login">
-        <h1>Login</h1>
-        <div className="container-login">
+      <div className="guest">
+      <div className="section-guest">
+        <h1>Enter as guest</h1>
+        <div className="container-guest">
         <form onSubmit={this.handleLogin}>
-        <div className="username-login">
-          <label htmlFor="username">Username: </label>
+        <div className="username-guest">
+          <label htmlFor="username">Name: </label>
           <input type="text" name="username" value={username} onChange={this.handleChange}/>
-        </div>
-        <div className="password-login">
-          <label htmlFor="password" >Password: </label>
-          <input type="password" name="password" value={password} onChange={this.handleChange}/>
           </div>
-          
-          <div className="button-login">
+          <div className="button-guest">
           <input type="submit" value="Login"/>
           </div>
         </form>
